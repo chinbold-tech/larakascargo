@@ -3337,7 +3337,7 @@ h6 {
 /*----------------------------------------------------*/
 /*============== footer-area css ===============*/
 .footer-area {
-  padding-top: 115px;
+  padding: 0 60px 0 60px;
   background: #1f2338; }
   @media (max-width: 991px) {
     .footer-area {
