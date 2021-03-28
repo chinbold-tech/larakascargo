@@ -40,6 +40,18 @@ $links = [
         "text" => "Захиалга",
         "is_multi" => true,
     ],
+    [ "href" => [
+            [
+                "section_text" => "Пост",
+                "section_list" => [
+                    ["href" => "post", "text" => "Постууд"],
+                    ["href" => "post.new", "text" => "Шинэ пост"]
+                ]
+            ]
+        ],
+        "text" => "Post",
+        "is_multi" => true,
+    ],
 ];
 $navigation_links = array_to_object($links);
 @endphp
@@ -47,7 +59,7 @@ $navigation_links = array_to_object($links);
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('dashboard') }}">Dashboard</a>
+            <a>Menu</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ route('dashboard') }}">

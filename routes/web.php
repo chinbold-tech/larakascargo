@@ -4,7 +4,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
-
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,8 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/readpost/{postId}', [ IndexController::class, "show_post" ]);
+
 Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     Route::view('/dashboard', "dashboard")->name('dashboard');
 
@@ -41,5 +43,7 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     Route::view('/order/new', "pages.order.order-new")->name('order.new');
     Route::view('/order/edit/{orderId}', "pages.order.order-edit")->name('order.edit');
 
-
+    Route::get('/post', [ PostController::class, "index_view" ])->name('post');
+    Route::view('/post/new', "pages.post.post-new")->name('post.new');
+    Route::view('/post/edit/{postId}', "pages.post.post-edit")->name('post.edit');
 });

@@ -10,6 +10,6 @@
     </x-slot>
 
     <div>
-        <livewire:create-order action="updateOrder" :userId="request()->orderId" />
+        <livewire:create-order action="updateOrder" :orderId="request()->orderId" />
     </div>
 </x-app-layout>

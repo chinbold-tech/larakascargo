@@ -21,9 +21,26 @@
     <!--================End Home Banner Area =================-->
 
     <!--================Service  Area =================-->
+    
     <section id="feature" class="service-area area-padding">
         <div class="container">
             <div class="row">
+
+                <div class="mt-10 max-w-xl mx-auto">
+                    @foreach(\App\Models\Post::all() as $post)
+                        <div class="border-b mb-5 pb-5 border-gray-200">
+                            <img class="card-img-top" src="{{ asset($post['featured_image']) }}"
+                        alt="{{ asset($post['featured_image'])  }}">
+                            <a href="/post/{{ $post->slug }}" class="text-2xl font-bold mb-2">{{ $post->title }}</a>
+                            <p>{{ Str::limit($post->body, 100) }}</p>
+                        </div>
+                        
+                    <div class="card-footer text-muted">
+                        Posted on {{$post->created_at->format('M d Y')}} by
+                        <a href="#">{{$post->user['name']}}</a>
+                    </div>
+                    @endforeach
+                </div>
                 <!-- Single service -->
                 <div class="col-md-6 col-lg-4">
                     <div class="single-service">
