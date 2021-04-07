@@ -1,27 +1,22 @@
 <div>
-    <x-data-table :data="$data" :model="$orders">
+    <x-data-table :model="$cargos">
         <x-slot name="head">
             <tr>
                 <th><a wire:click.prevent="sortBy('code')" role="button" href="#">
-                    Code
+                    CODE
                     @include('components.sort-icon', ['field' => 'code'])
                 </a></th>
                 <th>
-                    Илгээгч
+                    Нэр
                 </th>
                 <th>
-                    Хүлээн авагч
-                   
+                    Утасны дугаар
                 </th>
                 <th>
                     Тайлбар
                 </th>
                 <th>
                     Тоо ширхэг / Жин
-                   
-                </th>
-                <th>
-                    Хүргэлт
                 </th>
                 <th><a wire:click.prevent="sortBy('is_active')" role="button" href="#">
                     Статус
@@ -31,22 +26,21 @@
                     Огноо
                     @include('components.sort-icon', ['field' => 'created_at'])
                 </a></th>
-                <th>Action</th>
+                <th>Үйлдэл</th>
             </tr>
         </x-slot>
         <x-slot name="body">
-            @foreach ($orders as $order)
-                <tr x-data="window.__controller.dataTableController({{ $order->id }})">
-                    <td>{{ $order->code }}</td>
-                    <td>{{ $order->shipper_name }} / {{ $order->shipper_number }} / {{ $order->shipper_address }}</td>                    
-                    <td>{{ $order->reciever_name }} / {{ $order->reciever_number }} / {{ $order->reciever_address }}</td>
-                    <td>{{ $order->description }}</td>
-                    <td>{{ $order->item_count }} / {{ $order->weight }}</td>                    
-                    <td>{{ $order->is_delivery }}</td>
+            @foreach ($cargos as $cargo)
+                <tr x-data="window.__controller.dataTableController({{ $cargo->id }})">
+                    <td>{{ $cargo->code }}</td>
+                    <td>{{ $cargo->reciever_name }}</td>
+                    <td>{{ $cargo->reciever_number }}</td>
+                    <td>{{ $cargo->description }}</td>
+                    <td>{{ $cargo->item_count }}/{{ $cargo->weight }}</td>
                     <td>{{ $cargo->is_active}}</td>
-                    <td>{{ $order->created_at->format('d M Y H:i') }}</td>
+                    <td>{{ $cargo->created_at->format('d M Y H:i') }}</td>
                     <td class="whitespace-no-wrap row-action--icon">
-                        <!-- <a role="button" href="/order/edit/{{ $order->id }}" class="mr-3"><i class="fa fa-16px fa-pen"></i></a>
+                        <!-- <a role="button" href="/cargo/edit/{{ $cargo->id }}" class="mr-3"><i class="fa fa-16px fa-pen"></i></a>
                         <a role="button" x-on:click.prevent="deleteItem" href="#"><i class="fa fa-16px fa-trash text-red-500"></i></a> -->
                     </td>
                 </tr>

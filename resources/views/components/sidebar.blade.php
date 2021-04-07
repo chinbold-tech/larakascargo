@@ -1,46 +1,21 @@
 @php
 $links = [
-    [
-        "href" => [
-            [
-                "section_text" => "User",
-                "section_list" => [
-                    ["href" => "user", "text" => "Data User"],
-                    ["href" => "user.new", "text" => "Buat User"]
-                ]
-            ]
-        ],
-        "text" => "User",
-        "is_multi" => true,
-    ],
-    
+    ["href" => "order", "text" => "Карго бүртгэх", "is_multi" => false],
+    ["href" => "cargos", "text" => "Карго олгох", "is_multi" => false],
     [ "href" => [
             [
-                "section_text" => "Хэрэглэгч",
+                "section_text" => "Админ",
                 "section_list" => [
-                    ["href" => "customer", "text" => "Customeruud"],
-                    ["href" => "customer.new", "text" => "Шинэ Cus"]
+                    ["href" => "user", "text" => "Админ хэрэглэгчид"],
                 ]
-            ]
-        ],
-        "text" => "Хэрэглэгч",
-        "is_multi" => true,
-    ],
-
-    
-    [ "href" => [
+            ],
             [
-                "section_text" => "Захиалга",
+                "section_text" => "Үйлчлүүлэгч",
                 "section_list" => [
-                    ["href" => "order", "text" => "Захиалгууд"],
-                    ["href" => "order.new", "text" => "Шинэ захиалга"]
+                    ["href" => "customer", "text" => "Үйлчлүүлэгчид"],
                 ]
-            ]
-        ],
-        "text" => "Захиалга",
-        "is_multi" => true,
-    ],
-    [ "href" => [
+            ],
+            
             [
                 "section_text" => "Пост",
                 "section_list" => [
@@ -49,7 +24,7 @@ $links = [
                 ]
             ]
         ],
-        "text" => "Post",
+        "text" => "Sub Menu",
         "is_multi" => true,
     ],
 ];
@@ -68,12 +43,13 @@ $navigation_links = array_to_object($links);
         </div>
         @foreach ($navigation_links as $link)
         <ul class="sidebar-menu">
-            <li class="menu-header">{{ $link->text }}</li>
+            
             @if (!$link->is_multi)
             <li class="{{ Request::routeIs($link->href) ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route($link->href) }}"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                <a class="nav-link" href="{{ route($link->href) }}"><i class="fas fa-fire"></i><span>{{ $link->text }}</span></a>
             </li>
             @else
+            <li class="menu-header">{{ $link->text }}</li>
                 @foreach ($link->href as $section)
                     @php
                     $routes = collect($section->section_list)->map(function ($child) {

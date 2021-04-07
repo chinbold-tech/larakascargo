@@ -128,7 +128,7 @@
                 <x-jet-input id="mn_total" type="number" class="mt-1 block w-full form-control shadow-none" wire:model.defer="order.mn_total" />
                 <x-jet-input-error for="order.mn_total" class="mt-2" />
             </div>
-
+        
         </x-slot>
 
         <x-slot name="actions">

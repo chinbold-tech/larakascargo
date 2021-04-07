@@ -79,31 +79,41 @@ class Main extends Component
                         "data" => array_to_object([
                             'href' => [
                                 'create_new' => route('order.new'),
-                                'create_new_text' => 'Шинэ захиалга нэмэх',
+                                'create_new_text' => 'Шинэ карго бүртгэх',
                                 'export' => '#',
                                 'export_text' => ' '
                             ]
                         ])
                     ];
                     break;
-                    case 'post':
-                        $posts = $this->model::search($this->search)
-                            ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
-                            ->paginate($this->perPage);
-        
-                        return [
-                            "view" => 'livewire.table.post',
-                            "posts" => $posts,
-                            "data" => array_to_object([
-                                'href' => [
-                                    'create_new' => route('post.new'),
-                                    'create_new_text' => 'Шинэ пост нэмэх',
-                                    'export' => '#',
-                                    'export_text' => ' '
-                                ]
-                            ])
-                        ];
-                        break;
+            case 'post':
+                $posts = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.post',
+                    "posts" => $posts,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('post.new'),
+                            'create_new_text' => 'Шинэ пост нэмэх',
+                            'export' => '#',
+                            'export_text' => ' '
+                        ]
+                    ])
+                ];
+                break;
+            case 'cargo':
+                $cargos = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.cargo',
+                    "cargos" => $cargos,
+                ];
+                break;
 
             default:
                 # code...

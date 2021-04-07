@@ -51,6 +51,7 @@ class Order extends Model
     {
         return empty($query) ? static::query()
             : static::where('code', 'like', '%'.$query.'%')
-                ->orWhere('customer_id', 'like', '%'.$query.'%');
+                ->orWhere('shipper_number', 'like', '%'.$query.'%')
+                ->orWhere('receiver_number', 'like', '%'.$query.'%');
     }
 }

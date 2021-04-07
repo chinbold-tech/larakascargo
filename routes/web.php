@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CargoController;
+use App\Http\Livewire\Todos;
+use App\Http\Livewire\Cargos;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +29,7 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/readpost/{postId}', [ IndexController::class, "show_post" ]);
+// Route::get('/readpost/{postId}', [ IndexController::class, "show_post" ]);
 
 Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     Route::view('/dashboard', "dashboard")->name('dashboard');
@@ -46,4 +49,6 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     Route::get('/post', [ PostController::class, "index_view" ])->name('post');
     Route::view('/post/new', "pages.post.post-new")->name('post.new');
     Route::view('/post/edit/{postId}', "pages.post.post-edit")->name('post.edit');
+    Route::get('todos', Todos::class);
+    Route::get('/cargos', [ CargoController::class, "index_view" ])->name('cargos');
 });
