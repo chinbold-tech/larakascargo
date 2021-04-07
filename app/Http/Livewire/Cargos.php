@@ -7,8 +7,8 @@ use App\Models\Order;
 
 class Cargos extends Component
 {
-    public $cargos, $title, $description, $todo_id;
-    public $isOpen = 0;
+    public $cargos;
+    // public $isOpen = 0;
    
     /**
      * The attributes that are mass assignable.
@@ -17,9 +17,8 @@ class Cargos extends Component
      */
     public function render()
     {
-        return view('livewire.cargos', [
-            'cargos' => Order::class
-        ]);
+        $this->cargos = Order::class;
+        return view('livewire.cargos');
     }
    
     /**

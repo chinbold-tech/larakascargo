@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CargoController;
 use App\Http\Livewire\Todos;
 use App\Http\Livewire\Cargos;
+use App\Http\Livewire\Burtgels;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,5 +51,6 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     Route::view('/post/new', "pages.post.post-new")->name('post.new');
     Route::view('/post/edit/{postId}', "pages.post.post-edit")->name('post.edit');
     Route::get('todos', Todos::class);
-    Route::get('/cargos', [ CargoController::class, "index_view" ])->name('cargos');
+    Route::get('/cargo', Cargos::class)->name('cargos');
+    Route::get('/burtgel', Burtgels::class)->name('burtgels');
 });

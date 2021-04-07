@@ -16,15 +16,14 @@ class CreateUser extends Component
     protected function getRules()
     {
         $rules = ($this->action == "updateUser") ? [
-            'user.email' => 'required|email|unique:users,email,' . $this->userId
+            'user.username' => 'required|unique:users' . $this->userId
         ] : [
             'user.password' => 'required|min:8|confirmed',
             'user.password_confirmation' => 'required' // livewire need this
         ];
 
         return array_merge([
-            'user.lastname' => 'required|min:3',
-            'user.email' => 'required|email|unique:users,email'
+            'user.username' => 'required|unique:users'
         ], $rules);
     }
 
@@ -62,10 +61,10 @@ class CreateUser extends Component
         if (!!$this->userId) {
             $user = User::find($this->userId);
 
-            $this->user = [
-                "lastname" => $user->lastname,
-                "email" => $user->email,
-            ];
+            // $this->user = [
+            //     "lastname" => $user->lastname,
+            //     "email" => $user->email,
+            // ];
         }
 
         $this->button = create_button($this->action, "User");

@@ -14,9 +14,9 @@ class Order extends Model
         'shipper_name',
         'shipper_number',
         'shipper_address',
-        'reciever_name',
-        'reciever_number',
-        'reciever_address',
+        'receiver_name',
+        'receiver_number',
+        'receiver_address',
         'description',
         'item_count',
         'weight',
@@ -49,7 +49,7 @@ class Order extends Model
 
     public static function search($query)
     {
-        return empty($query) ? static::query()
+        return empty($query) ? static::where('is_active','!=',0)
             : static::where('code', 'like', '%'.$query.'%')
                 ->orWhere('shipper_number', 'like', '%'.$query.'%')
                 ->orWhere('receiver_number', 'like', '%'.$query.'%');

@@ -44,6 +44,7 @@ class CreateOrdersTable extends Migration
             $table->text('recieved_description')->nullable();
             $table->date('recieved_date')->nullable();
             $table->tinyInteger('is_active')->default(1);
+            $table->tinyInteger('step')->default(0);
             $table->bigInteger('user_id')->nullable();
             $table->bigInteger('customer_id')->nullable();
             $table->timestamps();
