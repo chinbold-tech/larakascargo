@@ -15,24 +15,24 @@
                     <div class="grid grid-cols-12 gap-6">
                         <div class="col-span-6 sm:col-span-6">
                         <div class="form-group">
-                            <label>Илгээгчийн нэр</label>
-                            <input autocomplete="off" type="text" class="form-control" wire:model="shipper_name">
-                            @error('shipper_name') <span class="text-red-500">{{ $message }}</span>@enderror
+                            <label>kr_bank_account</label>
+                            <input autocomplete="off" type="text" class="form-control" wire:model="kr_bank_account">
+                            @error('kr_bank_account') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         </div>
                         <div class="col-span-6 sm:col-span-6">
-                            <label>Илгээгчийн утас</label>
+                            <label>kr_cash</label>
                             <input autocomplete="off" type="number"
                                 class="form-control"
-                                id="shipper_number" wire:model="shipper_number">
-                            @error('shipper_number') <span class="text-red-500">{{ $message }}</span>@enderror
+                                id="kr_cash" wire:model="kr_cash">
+                            @error('kr_cash') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-span-12 sm:col-span-12">
-                            <label>Илгээгчийн хаяг</label>
+                            <label>kr_bank_detail</label>
                             <textarea autocomplete="off"
                                 class="form-control"
-                                id="shipper_address" wire:model="shipper_address" ></textarea>
-                            @error('shipper_address') <span class="text-red-500">{{ $message }}</span>@enderror
+                                id="kr_bank_detail" wire:model="kr_bank_detail" ></textarea>
+                            @error('kr_bank_detail') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-span-6 sm:col-span-6">
                             <label>Хүлээн авагчийн нэр</label>
@@ -70,14 +70,14 @@
                             @error('weight') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-span-2 sm:col-span-2">
-                            <label>Хүргэлт</label>
+                            <label>payment_method</label>
                             <div class="selectgroup w-100">
                                 <label class="selectgroup-item">
-                                <input autocomplete="off" type="radio" wire:model="is_delivery" value="0" class="selectgroup-input">
+                                <input autocomplete="off" type="radio" wire:model="payment_method" value="0" class="selectgroup-input">
                                 <span class="selectgroup-button">No</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                <input autocomplete="off" type="radio" wire:model="is_delivery" value="1" class="selectgroup-input">
+                                <input autocomplete="off" type="radio" wire:model="payment_method" value="1" class="selectgroup-input">
                                 <span class="selectgroup-button">Yes</span>
                                 </label>
                             </div>

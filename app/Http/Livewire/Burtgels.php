@@ -7,6 +7,7 @@ use Livewire\WithPagination;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use PDF;
 
 class Burtgels extends Component
 {
@@ -212,7 +213,7 @@ class Burtgels extends Component
                 'is_active' => 1,
                 'user_id' => Auth::user()->id,
                 'step' => 1,
-                'code' => uniqid('OC-')
+                'code' => 'OW'.Carbon::now()->format('YmdHis'),
             ]);
         }
 
@@ -277,4 +278,14 @@ class Burtgels extends Component
             ]);
         session()->flash('message', 'Амжилттай устгагдлаа.');
     }
+
+    // public function printpdf($id)
+    // {
+    //     $data = Order::findOrFail($id);
+    //   // share data to view
+    //   $pdf = PDF::loadView('pdf.printpdf',array('data' => $data));
+
+    //   // download PDF file with download method
+    //   return $pdf->stream();
+    // }
 }

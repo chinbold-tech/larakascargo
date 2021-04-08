@@ -53,4 +53,5 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     Route::get('todos', Todos::class);
     Route::get('/cargo', Cargos::class)->name('cargos');
     Route::get('/burtgel', Burtgels::class)->name('burtgels');
+    Route::get('/pdf/{id}',[CargoController::class, "pdf_view"])->name("printpdf");
 });

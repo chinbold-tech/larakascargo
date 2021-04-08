@@ -27,12 +27,12 @@ class Order extends Model
         'shipping_box',
         'shipping_date',
         'kr_cash',
-        'kr_bank_account',
-        'kr_bank_detail',
+        'kr_bank',
+        'kr_detail',
         'kr_total',
         'mn_cash',
-        'mn_bank_account',
-        'mn_bank_detail',
+        'mn_bank',
+        'mn_detail',
         'mn_total',
         'recieved_name',
         'recieved_phone',
@@ -42,6 +42,7 @@ class Order extends Model
         'user_id',
         'customer_id',
         'step',
+        'total',
 
 
     ];

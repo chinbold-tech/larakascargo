@@ -12,4 +12,10 @@ class CargoController extends Controller
             'cargos' => Order::class
         ]);
     }
+
+    public function pdf_view ($id)
+    {
+        $data = Order::findOrFail($id);
+        return view('pdf.printpdf',['data' => $data]);
+    }
 }

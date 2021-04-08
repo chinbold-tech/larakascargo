@@ -1,7 +1,6 @@
 @php
 $links = [
-    ["href" => "burtgels", "text" => "Карго бүртгэх", "is_multi" => false],
-    ["href" => "cargos", "text" => "Карго олгох", "is_multi" => false],
+    ["href" => "burtgels", "text" => "Карго бүртгэл", "is_multi" => false],
     [ "href" => [
             [
                 "section_text" => "Админ",
