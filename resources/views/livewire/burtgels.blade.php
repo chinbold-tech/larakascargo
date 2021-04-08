@@ -5,6 +5,9 @@
     @if($isOpen)
     @include('livewire.burtgels-create')
     @endif
+    @if($isOpenOlgoh)
+    @include('livewire.burtgels-olgoh')
+    @endif
     <div class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
         @if (session()->has('message'))
         <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3"
@@ -32,6 +35,26 @@
                         <option>15</option>
                         <option>25</option>
                     </select>
+                </div>
+                <div class="col">
+                    <div class="selectgroup selectgroup-pills">
+                        <label class="selectgroup-item">
+                            <input type="checkbox" value="1" class="selectgroup-input" wire:model="filters">
+                            <span class="selectgroup-button">Шинэ</span>
+                        </label>
+                        <label class="selectgroup-item">
+                            <input type="checkbox" value="2" class="selectgroup-input" wire:model="filters">
+                            <span class="selectgroup-button">Замд яваа</span>
+                        </label>
+                        <label class="selectgroup-item">
+                            <input type="checkbox" value="3" class="selectgroup-input" wire:model="filters">
+                            <span class="selectgroup-button">Буусан</span>
+                        </label>
+                        <label class="selectgroup-item">
+                            <input type="checkbox" value="4" class="selectgroup-input" wire:model="filters">
+                            <span class="selectgroup-button">Олгосон</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="col">
@@ -93,9 +116,11 @@
                                 <td>{{ $order->is_active}}</td>
                                 <td>{{ $order->created_at->format('d M Y H:i') }}</td>
                                 <td class="whitespace-no-wrap row-action--icon">
-                                    <a role="button" wire:click="edit({{ $order->id }})" class="mr-3"><i
+                                    <a role="button" wire:click="edit({{ $order->id }})" class="mr-3" title="Засах"><i
                                             class="fa fa-16px fa-pen"></i></a>
-                                    <a role="button" x-on:click.prevent="deleteItem" href="#"><i
+                                    <a role="button" wire:click="editOlgoh({{ $order->id }})" class="mr-3"
+                                        title="Олгох"><i class="fa fa-16px text-green-500 fa-handshake"></i></a>
+                                    <a role="button" x-on:click.prevent="deleteItem" href="#" title="Устгах"><i
                                             class="fa fa-16px fa-trash text-red-500"></i></a>
                                 </td>
                             </tr>

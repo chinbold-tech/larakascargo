@@ -41,17 +41,25 @@ class Order extends Model
         'is_active',
         'user_id',
         'customer_id',
+        'step',
 
 
     ];
 
 
 
-    public static function search($query)
+    public static function search($query,$filters)
     {
         return empty($query) ? static::where('is_active','!=',0)
-            : static::where('code', 'like', '%'.$query.'%')
-                ->orWhere('shipper_number', 'like', '%'.$query.'%')
-                ->orWhere('receiver_number', 'like', '%'.$query.'%');
+                ->when($filters, function ($query1, $filters) {
+                    return $query1->whereIn('step', $filters);
+                })
+            : static::where('is_active','!=',0)->when($filters, function ($query1, $filters) {
+                return $query1->whereIn('step', $filters);
+            })->where(function ($query2) use ($query) {
+                    $query2->where('code', 'like', '%'.$query.'%')
+                    ->orWhere('shipper_number', 'like', '%'.$query.'%')
+                    ->orWhere('receiver_number', 'like', '%'.$query.'%');
+                });
     }
 }
