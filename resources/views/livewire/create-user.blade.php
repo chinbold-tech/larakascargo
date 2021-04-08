@@ -10,32 +10,11 @@
 
         <x-slot name="form">
             <div class="form-group col-span-6 sm:col-span-5">
-                <x-jet-label for="firstname" value="{{ __('Firstname') }}" />
-                <small>Ovgoo oruul</small>
-                <x-jet-input id="firstname" type="text" class="mt-1 block w-full form-control shadow-none" wire:model.defer="user.firstname" />
-                <x-jet-input-error for="user.firstname" class="mt-2" />
-            </div>
-
-            <div class="form-group col-span-6 sm:col-span-5">
-                <x-jet-label for="lastname" value="{{ __('Lastname') }}" />
-                <small>Neree oruul</small>
-                <x-jet-input id="lastname" type="text" class="mt-1 block w-full form-control shadow-none" wire:model.defer="user.lastname" />
-                <x-jet-input-error for="user.lastname" class="mt-2" />
-            </div>
-
-            <div class="form-group col-span-6 sm:col-span-5">
                 <x-jet-label for="username" value="{{ __('Username') }}" />
                 <small>User neree oruul</small>
                 <x-jet-input id="username" type="text" class="mt-1 block w-full form-control shadow-none" wire:model.defer="user.username" />
-                <x-jet-input-error for="user.lastname" class="mt-2" />
+                <x-jet-input-error for="user.username" class="mt-2" />
             </div>
-
-            <div class="form-group col-span-6 sm:col-span-5">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" type="text" class="mt-1 block w-full form-control shadow-none" wire:model.defer="user.email" />
-                <x-jet-input-error for="user.email" class="mt-2" />
-            </div>
-
             @if ($action == "createUser")
             <div class="form-group col-span-6 sm:col-span-5">
                 <x-jet-label for="password" value="{{ __('Password') }}" />

@@ -1,0 +1,108 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment https://github.com/PhenX/php-font-lib
+EncodingScheme FontSpecific
+Copyright Copyright (c) Font Awesome
+FontName Font Awesome v4 Deprecations
+FontSubfamily Regular
+UniqueID Font Awesome v4 Deprecations-5.15.1
+FullName Font Awesome v4 Deprecations
+Version 331.521 (Font Awesome version: 5.15.1)
+PostScriptName FontAwesomev4-Deprecations
+Description The web's most popular icon set and toolkit.
+FontVendorURL https://fontawesome.com
+PreferredFamily Font Awesome v4 Deprecations
+PreferredSubfamily Regular
+CompatibleFullName Font Awesome v4 Deprecations
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 49
+UnderlinePosition -72
+FontHeightOffset 0
+Ascender 875
+Descender -125
+FontBBox -14 -139 1264 893
+StartCharMetrics 83
+U 32 ; WX 391 ; N space ; G 3
+U 61443 ; WX 1000 ; N envelope ; G 4
+U 61446 ; WX 1125 ; N star ; G 5
+U 61460 ; WX 875 ; N trash-alt ; G 6
+U 61462 ; WX 750 ; N file ; G 7
+U 61466 ; WX 1000 ; N arrow-alt-circle-down ; G 8
+U 61467 ; WX 1000 ; N arrow-alt-circle-up ; G 9
+U 61469 ; WX 1000 ; N play-circle ; G 10
+U 61504 ; WX 1000 ; N pencil-alt ; G 11
+U 61509 ; WX 1125 ; N share-square ; G 12
+U 61510 ; WX 875 ; N check-square ; G 13
+U 61511 ; WX 1000 ; N arrows-alt ; G 14
+U 61532 ; WX 1000 ; N times-circle ; G 15
+U 61533 ; WX 1000 ; N check-circle ; G 16
+U 61565 ; WX 500 ; N arrows-alt-v ; G 17
+U 61566 ; WX 1000 ; N arrows-alt-h ; G 18
+U 61575 ; WX 1000 ; N thumbs-up ; G 19
+U 61576 ; WX 1000 ; N thumbs-down ; G 20
+U 61578 ; WX 1000 ; N heart ; G 21
+U 61579 ; WX 1000 ; N sign-out-alt ; G 22
+U 61582 ; WX 1000 ; N external-link-alt ; G 23
+U 61584 ; WX 1000 ; N sign-in-alt ; G 24
+U 61590 ; WX 875 ; N square ; G 25
+U 61591 ; WX 750 ; N bookmark ; G 26
+U 61602 ; WX 875 ; N bell ; G 27
+U 61668 ; WX 1125 ; N tachometer-alt ; G 28
+U 61669 ; WX 1000 ; N comment ; G 29
+U 61670 ; WX 1125 ; N comments ; G 30
+U 61676 ; WX 1000 ; N exchange-alt ; G 31
+U 61677 ; WX 1250 ; N cloud-download-alt ; G 32
+U 61678 ; WX 1250 ; N cloud-upload-alt ; G 33
+U 61685 ; WX 813 ; N utensils ; G 34
+U 61686 ; WX 750 ; N file-alt ; G 35
+U 61687 ; WX 875 ; N building ; G 36
+U 61708 ; WX 1000 ; N circle ; G 37
+U 61714 ; WX 1000 ; N reply ; G 38
+U 61716 ; WX 1000 ; N folder ; G 39
+U 61717 ; WX 1125 ; N folder-open ; G 40
+U 61725 ; WX 1000 ; N flag ; G 41
+U 61731 ; WX 1125 ; N star-half ; G 42
+U 61746 ; WX 1000 ; N shield-alt ; G 43
+U 61765 ; WX 1125 ; N ticket-alt ; G 44
+U 61767 ; WX 875 ; N minus-square ; G 45
+U 61768 ; WX 625 ; N level-up-alt ; G 46
+U 61769 ; WX 625 ; N level-down-alt ; G 47
+U 61772 ; WX 875 ; N external-link-square-alt ; G 48
+U 61798 ; WX 875 ; N youtube-square ; G 49
+U 61802 ; WX 1125 ; N youtube ; G 50
+U 61810 ; WX 1000 ; N bitbucket ; G 51
+U 61813 ; WX 500 ; N long-arrow-alt-down ; G 52
+U 61814 ; WX 500 ; N long-arrow-alt-up ; G 53
+U 61815 ; WX 875 ; N long-arrow-alt-left ; G 54
+U 61816 ; WX 875 ; N long-arrow-alt-right ; G 55
+U 61838 ; WX 1000 ; N arrow-alt-circle-right ; G 56
+U 61840 ; WX 1000 ; N arrow-alt-circle-left ; G 57
+U 61846 ; WX 875 ; N plus-square ; G 58
+U 61873 ; WX 1000 ; N utensil-spoon ; G 59
+U 61913 ; WX 1000 ; N paper-plane ; G 60
+U 61915 ; WX 1000 ; N circle ; G 61
+U 61943 ; WX 1250 ; N bell-slash ; G 62
+U 61964 ; WX 875 ; N font-awesome ; G 63
+U 61977 ; WX 1125 ; N gem ; G 64
+U 62000 ; WX 1000 ; N facebook ; G 65
+U 62026 ; WX 875 ; N sticky-note ; G 66
+U 62032 ; WX 750 ; N hourglass ; G 67
+U 62072 ; WX 1125 ; N map ; G 68
+U 62075 ; WX 1000 ; N comment-dots ; G 69
+U 62083 ; WX 1125 ; N credit-card ; G 70
+U 62092 ; WX 1000 ; N pause-circle ; G 71
+U 62094 ; WX 1000 ; N stop-circle ; G 72
+U 62107 ; WX 875 ; N accessible-icon ; G 73
+U 62108 ; WX 1000 ; N question-circle ; G 74
+U 62135 ; WX 1000 ; N envelope-open ; G 75
+U 62138 ; WX 875 ; N address-book ; G 76
+U 62140 ; WX 1125 ; N address-card ; G 77
+U 62142 ; WX 969 ; N user-circle ; G 78
+U 62144 ; WX 875 ; N user ; G 79
+U 62147 ; WX 1125 ; N id-card ; G 80
+U 62163 ; WX 1000 ; N window-close ; G 81
+U 62164 ; WX 1000 ; N window-close ; G 82
+EndCharMetrics
+EndFontMetrics

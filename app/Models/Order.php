@@ -14,9 +14,9 @@ class Order extends Model
         'shipper_name',
         'shipper_number',
         'shipper_address',
-        'reciever_name',
-        'reciever_number',
-        'reciever_address',
+        'receiver_name',
+        'receiver_number',
+        'receiver_address',
         'description',
         'item_count',
         'weight',
@@ -27,12 +27,12 @@ class Order extends Model
         'shipping_box',
         'shipping_date',
         'kr_cash',
-        'kr_bank_account',
-        'kr_bank_detail',
+        'kr_bank',
+        'kr_detail',
         'kr_total',
         'mn_cash',
-        'mn_bank_account',
-        'mn_bank_detail',
+        'mn_bank',
+        'mn_detail',
         'mn_total',
         'recieved_name',
         'recieved_phone',
@@ -41,16 +41,26 @@ class Order extends Model
         'is_active',
         'user_id',
         'customer_id',
+        'step',
+        'total',
 
 
     ];
 
 
 
-    public static function search($query)
+    public static function search($query,$filters)
     {
-        return empty($query) ? static::query()
-            : static::where('code', 'like', '%'.$query.'%')
-                ->orWhere('customer_id', 'like', '%'.$query.'%');
+        return empty($query) ? static::where('is_active','!=',0)
+                ->when($filters, function ($query1, $filters) {
+                    return $query1->whereIn('step', $filters);
+                })
+            : static::where('is_active','!=',0)->when($filters, function ($query1, $filters) {
+                return $query1->whereIn('step', $filters);
+            })->where(function ($query2) use ($query) {
+                    $query2->where('code', 'like', '%'.$query.'%')
+                    ->orWhere('shipper_number', 'like', '%'.$query.'%')
+                    ->orWhere('receiver_number', 'like', '%'.$query.'%');
+                });
     }
 }

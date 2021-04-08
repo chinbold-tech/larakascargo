@@ -83,7 +83,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
 <script src="js/jquery.ajaxchimp.min.js"></script>
 <script src="js/waypoints.min.js"></script>
